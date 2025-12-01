@@ -58,3 +58,29 @@ Results are visualized through interactive **Plotly** charts for easy interpreta
 
 4. **Visualization:**  
    - Generate Plotly charts for sentiment distribution and top complaint themes.
+
+## ⚡ Quickstart
+
+### 
+1️⃣  Create a virtual environment & install dependencies
+python -m venv .venv
+source .venv/bin/activate    # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+
+2️⃣ Add the dataset
+Place your Amazon reviews CSV at:
+data/raw/reviews.csv
+(Any CSV with a Text or review_text column works.)
+
+3️⃣ Preprocess the data
+python -m src.prepare_data
+
+4️⃣ Run sentiment analysis (BERT/VADER)
+python -m src.train_sentiment
+
+5️⃣ Run topic modeling (LDA or BERTopic)
+python -m src.topic_model
+
+6️⃣Visualize results (optional Streamlit dashboard)
+streamlit run app/streamlit_app.py
+Then go to http://localhost:8501 in your browser.
